@@ -12,6 +12,7 @@ from prepare_data.Landmark_utils import rotate, flip
 
 dstdir = "../../DATA/48/train_ONet_landmark_aug"
 OUTPUT = '../../DATA/48'
+data_path = '../../DATA'
 if not exists(OUTPUT): os.mkdir(OUTPUT)
 if not exists(dstdir): os.mkdir(dstdir)
 assert(exists(dstdir) and exists(OUTPUT))
@@ -55,7 +56,7 @@ def GenerateData(ftxt, output,net,argument=False):
         return
     image_id = 0
     f = open(join(OUTPUT,"landmark_%s_aug.txt" %(size)),'w')
-    data = getDataFromTxt(ftxt)
+    data = getDataFromTxt(ftxt, data_path)
     idx = 0
     #image_path bbox landmark(5*2)
     for (imgPath, bbox, landmarkGt) in data:
@@ -185,6 +186,6 @@ if __name__ == '__main__':
     net = "ONet"
     #train_txt = "train.txt"
     train_txt = "trainImageList.txt"
-    imgs,landmarks = GenerateData(train_txt, OUTPUT,net,argument=True)
+    imgs,landmarks = GenerateData(train_txt, data_path,net,argument=True)
     #WriteToTfrecord(imgs,landmarks,net)
    

@@ -48,7 +48,7 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
         print('Dataset files already exist. Exiting without re-creating them.')
         return
     # GET Dataset, and shuffling.
-    dataset = get_dataset(dataset_dir, net=net)
+    dataset = get_dataset(dataset_dir, name, net=net)
     # filenames = dataset['filename']
     if shuffling:
         tf_filename = tf_filename + '_shuffle'
@@ -70,10 +70,10 @@ def run(dataset_dir, net, output_dir, name='MTCNN', shuffling=False):
     print('\nFinished converting the MTCNN dataset!')
 
 
-def get_dataset(dir, net='PNet'):
+def get_dataset(dir, name, net='PNet'):
     #item = 'imglists/PNet/train_%s_raw.txt' % net
     #item = 'imglists/PNet/train_%s_landmark.txt' % net
-    item = '%s/neg_%s.txt' % (net,net)
+    item = '%s/%s_48.txt' % (net, name)
     #print(item)
     dataset_dir = os.path.join(dir, item)
     imagelist = open(dataset_dir, 'r')
@@ -124,6 +124,7 @@ def get_dataset(dir, net='PNet'):
 
 if __name__ == '__main__':
     dir = '../../DATA/'
-    net = '48'
+    net = 'no_LM48'
+    name = 'part'
     output_directory = '../../DATA/imglists/ONet'
-    run(dir, net, output_directory, shuffling=True)
+    run(dir, net, output_directory, name, shuffling=True)
