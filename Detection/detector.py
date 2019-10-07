@@ -16,13 +16,14 @@ class Detector(object):
                 config=tf.ConfigProto(allow_soft_placement=True, gpu_options=tf.GPUOptions(allow_growth=True)))
             saver = tf.train.Saver()
             #check whether the dictionary is valid
-            model_dict = '/'.join(model_path.split('/')[:-1])
-            ckpt = tf.train.get_checkpoint_state(model_dict)
-            print(model_path)
-            readstate = ckpt and ckpt.model_checkpoint_path
-            assert  readstate, "the params dictionary is not valid"
-            print("restore models' param")
-            saver.restore(self.sess, model_path)
+            #model_dict = '/'.join(model_path.split('/')[:-1])
+            #ckpt = tf.train.get_checkpoint_state(model_dict)
+            #print(model_path)
+            #readstate = ckpt and ckpt.model_checkpoint_path
+            #assert  readstate, "the params dictionary is not valid"
+            #print("restore models' param")
+            model_file = tf.train.latest_checkpoint(model_path)
+            saver.restore(self.sess, model_file)
 
         self.data_size = data_size
         self.batch_size = batch_size

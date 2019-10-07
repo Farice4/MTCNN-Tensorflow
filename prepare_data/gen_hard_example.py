@@ -130,18 +130,18 @@ def t_net(prefix, epoch,
              stride=2, slide_window=False, shuffle=False, vis=False):
     detectors = [None, None, None]
     print("Test model: ", test_mode)
-    #PNet-echo
-    model_path = ['%s-%s' % (x, y) for x, y in zip(prefix, epoch)]
-    print(model_path[0])
-    # load pnet model
-    if slide_window:
-        PNet = Detector(P_Net, 12, batch_size[0], model_path[0])
-    else:
-        PNet = FcnDetector(P_Net, model_path[0])
-    detectors[0] = PNet
+    #model path
+    model_path = ['../model/PNet/', '../model/RNet/', '../model/ONet']
+    if test_mode == 'PNet':
+        # load pnet model
+        if slide_window:
+            PNet = Detector(P_Net, 12, batch_size[0], model_path[0])
+        else:
+            PNet = FcnDetector(P_Net, model_path[0])
+        detectors[0] = PNet
 
     # load rnet model
-    if test_mode in ["RNet", "ONet"]:
+    if test_mode == "RNet":
         print("==================================", test_mode)
         RNet = Detector(R_Net, 24, batch_size[1], model_path[1])
         detectors[1] = RNet
