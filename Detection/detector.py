@@ -22,7 +22,9 @@ class Detector(object):
             #readstate = ckpt and ckpt.model_checkpoint_path
             #assert  readstate, "the params dictionary is not valid"
             #print("restore models' param")
+            import pdb;pdb.set_trace()
             model_file = tf.train.latest_checkpoint(model_path)
+            print("------------------%s--------------" % model_file)
             saver.restore(self.sess, model_file)
 
         self.data_size = data_size

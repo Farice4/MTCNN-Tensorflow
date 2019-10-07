@@ -25,7 +25,7 @@ This work is used for reproduce MTCNN,a Joint Face Detection and Alignment using
 10. Run `gen_imglist_rnet.py` to merge two parts of training data.
 11. Run `gen_RNet_tfrecords.py` to generate tfrecords for **RNet**.(**you should run this script four times to generate tfrecords of neg,pos,part and landmark respectively**)
 12. After training **RNet** python train_RNet.py
-13. Run `gen_hard_example` --test-mode ONet to generate training data(Face Detection Part) for **ONet**.
+13. Run `gen_hard_example` --test-mode RNet to generate training data(Face Detection Part) for **ONet**.
 14. Run `gen_landmark_aug_48.py` to generate training data(Face Landmark Detection Part) for **ONet**.
 15. Run `gen_imglist_onet.py` to merge two parts of training data.
 16. Run `gen_ONet_tfrecords.py` to generate tfrecords for **ONet**.(**you should run this script four times to generate tfrecords of neg,pos,part and landmark respectively**)
