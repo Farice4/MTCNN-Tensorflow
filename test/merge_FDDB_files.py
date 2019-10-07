@@ -37,7 +37,7 @@ def merge_files(file_names,output_file_name):
 
 
 if __name__ == '__main__':
-    merge_file_dir = ['../../DATA/FDDB-folds/FDDB-folds/','../../DATA/FDDB-folds/FDDB-folds/','../../DATA/FDDB_OUTPUT/']
+    merge_file_dir = ['../data/FDDB-folds/FDDB-folds/','../data/FDDB-folds/FDDB-folds/','../data/FDDB_OUTPUT/']
 
     o_file_names = ['Fold_all.txt','FDDB-fold-all-ellipseList.txt','FDDB-det-fold-all.txt']
 

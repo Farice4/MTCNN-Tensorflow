@@ -130,9 +130,9 @@ def get_dataset(dir, name, net='PNet'):
 
 
 if __name__ == '__main__':
-    dir = '../../DATA'
+    dir = '../data'
     net = 'no_LM24'
-    output_directory = '../../DATA/imglists_noLM/RNet'
+    output_directory = '../data/imglists_noLM/RNet'
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
     name = 'part'

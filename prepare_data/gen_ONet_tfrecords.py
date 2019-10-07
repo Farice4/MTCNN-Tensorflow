@@ -123,8 +123,8 @@ def get_dataset(dir, name, net='PNet'):
 
 
 if __name__ == '__main__':
-    dir = '../../DATA/'
+    dir = '../data/'
     net = 'no_LM48'
     name = 'part'
-    output_directory = '../../DATA/imglists/ONet'
+    output_directory = '../data/imglists/ONet'
     run(dir, net, output_directory, name, shuffling=True)

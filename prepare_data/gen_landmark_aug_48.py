@@ -10,9 +10,9 @@ import numpy.random as npr
 from prepare_data.BBox_utils import getDataFromTxt, BBox
 from prepare_data.Landmark_utils import rotate, flip
 
-dstdir = "../../DATA/48/train_ONet_landmark_aug"
-OUTPUT = '../../DATA/48'
-data_path = '../../DATA'
+dstdir = "../data/48/train_ONet_landmark_aug"
+OUTPUT = '../data/48'
+data_path = '../data'
 if not exists(OUTPUT): os.mkdir(OUTPUT)
 if not exists(dstdir): os.mkdir(dstdir)
 assert(exists(dstdir) and exists(OUTPUT))

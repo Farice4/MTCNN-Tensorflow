@@ -11,8 +11,8 @@ from Detection.fcn_detector import FcnDetector
 from Detection.MtcnnDetector import MtcnnDetector
 import cv2
 import os
-data_dir = '../../DATA/'
-out_dir = '../../DATA/FDDB_OUTPUT'
+data_dir = '../data/'
+out_dir = '../data/FDDB_OUTPUT'
 
 def get_imdb_fddb(data_dir):
     imdb = []

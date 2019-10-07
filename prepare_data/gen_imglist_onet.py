@@ -2,7 +2,7 @@ import numpy as np
 import numpy.random as npr
 import os
 
-data_dir = '../../DATA/'
+data_dir = '../data/'
 dir_name = 'no_LM48'
 #anno_file = os.path.join(data_dir, "anno.txt")
 

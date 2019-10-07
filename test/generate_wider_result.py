@@ -44,9 +44,9 @@ def get_image_info(anno_file):
 
 if __name__ == '__main__':
 
-    data_dir = '../../DATA/WIDER_val/images'
+    data_dir = '../data/WIDER_val/images'
     anno_file = 'wider_face_val.txt'
-    output_file = '../../DATA/WIDER_NoLM_RNet_0.3_0.1/'
+    output_file = '../data/WIDER_NoLM_RNet_0.3_0.1/'
 
     test_mode = "RNet"
     thresh = [0.3, 0.1, 0.7]

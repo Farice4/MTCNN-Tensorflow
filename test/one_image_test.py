@@ -44,7 +44,7 @@ gt_imdb = []
 #imdb_ = dict()"
 #imdb_['image'] = im_path
 #imdb_['label'] = 5
-path = "../../DATA/test/lfpw_testImage"
+path = "../data/test/lfpw_testImage"
 for item in os.listdir(path):
     gt_imdb.append(os.path.join(path,item))
 test_data = TestLoader(gt_imdb)
